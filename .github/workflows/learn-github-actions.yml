@@ -14,7 +14,7 @@ jobs:
         run: |
           # $CONDA is an environment variable pointing to the root of the miniconda directory
           $CONDA/bin/conda env update --file environment-Linux.yml --name base
-          $ conda activate base
+          $conda activate base
 
       - uses: actions/setup-node@v3
         with:
