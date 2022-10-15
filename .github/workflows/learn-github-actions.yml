@@ -5,6 +5,7 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - shell: bash
       - uses: actions/checkout@v3
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
@@ -14,7 +15,7 @@ jobs:
       - run: conda --version
       - run: which python
       - run: conda env create -f environment-Linux.yml
-      - run: bash conda activate env-electron-python
+      - run: conda activate env-electron-python
 
       - uses: actions/setup-node@v3
         with:
