@@ -17,7 +17,7 @@ jobs:
       - run: conda --version
       - run: which python
       - run: conda env create -f environment-Linux.yml
-      - run: bash conda activate env-electron-python
+      - run: conda activate env-electron-python
 
       - uses: actions/setup-node@v3
         with:
