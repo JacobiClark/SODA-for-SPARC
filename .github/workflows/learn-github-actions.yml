@@ -13,6 +13,7 @@ jobs:
       - uses: s-weigand/setup-conda@v1
       - run: conda --version
       - run: which python
+      - run: conda activate env --f environment.Linux-yml
 
       - uses: actions/setup-node@v3
         with:
