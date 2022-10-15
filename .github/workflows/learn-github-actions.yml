@@ -12,3 +12,4 @@ jobs:
       - run: npm install
       # get the npm version
       - run: npm --v
+      - run: ls
