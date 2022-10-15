@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "14"
+      - run: ls
       - run: npm install
       # get the npm version
       - run: npm --v
-      - run: ls
