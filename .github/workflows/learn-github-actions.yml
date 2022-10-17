@@ -1,5 +1,5 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Build-and-deploy-linux
+run-name: ${{ github.actor }} is building a linux release for SODA
 
 on:
   push:
@@ -9,10 +9,6 @@ on:
 jobs:
   deploy-on-linux:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        shell: bash -l {0}
 
     steps:
       - uses: actions/checkout@v3
