@@ -33,3 +33,11 @@ jobs:
 
       - name: Install package.json modules and their dependencies
         run: npm install --ignore-scripts
+
+      - name: Build and deploy on MAC
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run python-onefile-build
+          npm run build-mac
+          npm run deploy-mac
