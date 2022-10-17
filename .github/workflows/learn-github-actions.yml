@@ -33,3 +33,4 @@ jobs:
           conda activate env-electron-python
           npm run python-onefile-build
           npm run build-linux
+          npm run deploy-linux
