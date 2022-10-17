@@ -28,7 +28,6 @@ jobs:
         with:
           node-version: "14"
       - run: ls
-      - run: npm install
       # get the npm version
       - run: npm --v
       - run: |
