@@ -7,11 +7,13 @@ on:
       - main
 
 jobs:
-  check-bats-version:
+  deploy-on-linux:
     runs-on: ubuntu-latest
+
     defaults:
       run:
         shell: bash -l {0}
+
     steps:
       - uses: actions/checkout@v3
 
@@ -28,11 +30,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "14"
-      - run: npm install --ignore-scripts
 
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+
+      - name: Build and deploy on Linux
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           conda activate env-electron-python
           npm run python-onefile-build
           npm run build-linux
