@@ -28,8 +28,7 @@ jobs:
         with:
           node-version: "14"
       - run: npm install --ignore-scripts
-      # get the npm version
-      - run: npm --v
+
       - run: |
           npm run python-onefile-build
           npm run build-linux
