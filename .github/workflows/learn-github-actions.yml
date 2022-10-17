@@ -19,15 +19,11 @@ jobs:
           activate-environment: env-electron-python
           environment-file: environment-Linux.yml
           auto-activate-base: false
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - uses: s-weigand/setup-conda@v1
+
       - uses: actions/setup-node@v3
         with:
           node-version: "14"
-      - run: ls
+      - run: npm install --ignore-scripts
       # get the npm version
       - run: npm --v
       - run: |
