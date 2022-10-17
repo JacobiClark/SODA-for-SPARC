@@ -35,5 +35,3 @@ jobs:
           npm run python-onefile-build
           npm run build-linux
           npm run deploy-linux
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
