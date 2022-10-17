@@ -29,11 +29,11 @@ jobs:
         with:
           node-version: "14"
       - run: npm install --ignore-scripts
-      
+
       - env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: |
-        conda activate env-electron-python
-        npm run python-onefile-build
-        npm run build-linux
-        npm run deploy-linux
+          conda activate env-electron-python
+          npm run python-onefile-build
+          npm run build-linux
+          npm run deploy-linux
