@@ -34,10 +34,10 @@ jobs:
       - name: Install package.json modules and their dependencies
         run: npm install --ignore-scripts
 
-      uses: apple-actions/import-codesign-certs@v1
-      with: 
-        p12-file-base64: ${{ secrets.MACOS_CERTIFICATE }}
-        p12-password: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+      - uses: apple-actions/import-codesign-certs@v1
+        with:
+          p12-file-base64: ${{ secrets.MACOS_CERTIFICATE }}
+          p12-password: ${{ secrets.MACOS_CERTIFICATE_PWD }}
 
       - name: Build and deploy on MAC
         env:
