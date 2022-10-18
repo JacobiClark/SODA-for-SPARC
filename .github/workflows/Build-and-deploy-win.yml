@@ -1,5 +1,5 @@
 name: Build-and-deploy-win
-run-name: ${{ github.actor }} is building a linux release for SODA
+run-name: ${{ github.actor }} is building a Windows release for SODA
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  deploy-on-linux:
+  deploy-on-windows:
     runs-on: windows-latest
 
     defaults:
@@ -24,7 +24,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: env-electron-python
-          environment-file: environment-Windows.yml
+          environment-file: tools/anaconda-env/environment-Windows.yml
           auto-activate-base: false
 
       - uses: actions/setup-node@v3
