@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: "14"
 
-      - name: Install package.json modules and their dependencies
+      - name: Install package.json modules and their dependenciess
         run: npm install --ignore-scripts
 
       - name: Build and deploy on Windows
